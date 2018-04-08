@@ -6,6 +6,12 @@ In this project, your goal is to write a software pipeline to detect vehicles in
 
 ---
 
+### To Do
+
+- [x] Finish my changes
+- [ ] Push my commits to GitHub
+- [ ] Open a pull request
+
 **Vehicle Detection Project**
 
 The goals / steps of this project are the following:
