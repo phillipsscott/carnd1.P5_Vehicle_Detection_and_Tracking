@@ -2,7 +2,7 @@
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 
-In this project, your goal is to write a software pipeline to detect vehicles in a video (start with the test_video.mp4 and later implement on full project_video.mp4), but the main output or product we want you to create is a detailed writeup of the project.  Check out the [writeup template](https://github.com/udacity/CarND-Vehicle-Detection/blob/master/writeup_template.md) for this project and use it as a starting point for creating your own writeup.  
+The goal of this project is to write a software pipeline to detect vehicles in a video (initially on test_video.mp4 with later implementation on the full project_video.mp4), along with a detailed writeup of the project approach and methodology.
 
 ---
 
@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 
-### Project To Do List
+**_Project To Do List_**
 
 - [ ] Load & explore data
 - [ ] Implement functions for feature extraction & visualize each
