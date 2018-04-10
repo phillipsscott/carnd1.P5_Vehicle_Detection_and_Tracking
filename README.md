@@ -6,12 +6,40 @@ In this project, your goal is to write a software pipeline to detect vehicles in
 
 ---
 
-### To Do
+### Project To Do List
 
-- [x] Finish my changes
-- [ ] Push my commits to GitHub
-- [ ] Open a pull request
-
+- [ ] Load & explore data
+- [ ] Implement functions for feature extraction & visualize each
+    - [ ] Spatial Features
+    - [ ] Color Histogram Features
+    - [ ] HOG Features
+- [ ] Implement aggregate feature extraction function
+- [ ] Iterate over feature extraction parameters to find best configuration
+    - [ ] Randomize data & select subset for parameter selection
+    - [ ] Loop through parameters, optimizing for accuracy and time
+        - [ ] Spatial Features
+            - [ ] Color Space
+            - [ ] Size
+        - [ ] Color Histogram
+            - [ ] Color Space
+            - [ ] Bins
+        - [ ] HOG Features
+            - [ ] Color Space
+            - [ ] Orientation
+            - [ ] Pix per cell
+            - [ ] Cells per block
+- [ ] Train SVC with optimized feature extraction parameters
+    - [ ] Create label vectors
+    - [ ] Randomize data & split into train/test sets
+    - [ ] Normalize data with sklearn.StandardScaler
+        - Note: Fit to train data only, apply transform to train/test
+- [ ] Implement 'sliding window' function to extract bounding boxes from image
+    - [ ] Apply to test images and show output
+- [ ] Implement 'search windows' functions for HOG subsampling/multi-dim search
+    - [ ] Apply to test images and show output
+- [ ] Implement 'find cars' function to identify car bounding boxes
+    - [ ] Apply to test images and show output
+    
 **Vehicle Detection Project**
 
 The goals / steps of this project are the following:
