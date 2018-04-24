@@ -22,9 +22,9 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [im01]: ./examples/car_not_car.png
-[im02]: ./examples/color_hist.png
-[im03]: ./examples/bin_spatial.png
-[im04]: ./examples/hog_features.png
+[im02]: ./examples/color_hist.PNG
+[im03]: ./examples/bin_spatial.PNG
+[im04]: ./examples/hog_features.PNG
 [im05]: ./examples/window_search_small.png
 [im06]: ./examples/window_search_mid.png
 [im07]: ./examples/window_search_large.png 
@@ -32,8 +32,8 @@ The goals / steps of this project are the following:
 [im09]: ./examples/heatmap.png 
 [im10]: ./examples/labels.png 
 [im11]: ./examples/final_out.png 
-[im12]: ./examples/youtube_img.png # get from youtube cover img
-[final]: ./examples/final.gif #convert final video & save
+[im12]: ./examples/youtube_img.png
+[final]: ./examples/final.gif
 
 [video1]: ./project_video.mp4
 
@@ -56,15 +56,15 @@ The plan for creating a feature extractor was first to implement each component 
 
 Color histogram was created first, with the `convert_color` and `color_hist` functions implemented in code cell 6. Below is an example of what the color histogram looks like across each color channel for the car and not-car classes.
 
-![im02](examples/color_hist.png "color_hist")
+![im02](examples/color_hist.PNG "color_hist")
 
 The function to extract spatial features (`bin_spatial`) was defined in code cell 10. Below, you can see the plotted output of bin_spatial
 
-[im03]: (examples/bin_spatial.png)
+[im03]: (examples/bin_spatial.PNG )
 
 Finally, the HOG feature extractor was defined in cell 13 as get_hog_features(). The function returns the hog feature vector, in addition to optionally returning the hog_image as well. Below, you can see an example using the `RGB` color space and HOG parameters of `orientations=9`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`
 
-[im04]: (examples/hog_features.png)
+[im04]: (examples/hog_features.PNG)
 
 These components were aggregated into `extract_features` and `single_image_features` in cells 16/17 respectively. This wrapper function will allow us to easily toggle the parameters of each component as we train the SVC in the next section.
 
