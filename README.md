@@ -142,9 +142,7 @@ The final parameter set for feature extraction consisted of spatial features, al
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
 
-[![Watch the video](examples/youtube_img.png "YouTube Video")](https://youtu.be/Kf1KX540M6M)
-
-Here's a [link to my video result](./output_videos/project_video.mp4), or click the image above!
+Here's a [link to my video result](./output_videos/project_video.mp4)
 
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
