@@ -17,7 +17,6 @@ The goals / steps of this project are the following:
 * Run pipeline on a video stream (initially test_video.mp4, later on full project_video.mp4) and create a heat map of recurring detections frame by frame to reject outliers and follow detected vehicles.
 * Estimate a bounding box for vehicles detected.
 
-![final](output_images/final.gif)
 
 [//]: # (Image References)
 
@@ -33,7 +32,6 @@ The goals / steps of this project are the following:
 [im10]: ./examples/labels.png 
 [im11]: ./examples/final_out.png 
 [im12]: ./examples/youtube_img.png
-[final]: ./examples/final.gif
 
 [video1]: ./project_video.mp4
 
@@ -173,8 +171,6 @@ Here's an example result showing the heatmap from each of the sample images, the
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
-
 
 Issues to look at/work on
 
@@ -182,7 +178,12 @@ Improve processing speed:
 - improvements in feature extraction process - shrink the feature vector
 - hog features are calculated for a region then subsampled, would it be worthwhile to do this with spatial features & color histogram data?
 
-
+Notes:
+-Havent gotten the class implementation working yet, but will continue working on it. Needed to submit this without due to deadline. 
+-The plan for the class inclusion was two-fold. First, only every other image would be processed to cut processing time in half. Second, there would be a kind of low-pass filter implemented to improve the false positive/multiple box issue addressed with heatmapping/thresholding, as well as smoothing out the shakiness of the plotted boxes
+-The filter approach plan was as follows. For every other frame, the image would be processed, yielding the unfiltered (pre-heatmapping/labeling) bbox list for that image. These bboxes would be added to a deque in the class with maxlen=5. These boxes would be pulled from the class back to the `process_video() ` function for filtering/smoothing. given there will be up to 5 frames worth of bboxes, the threshold can/should be set higher - probably 5-10. If there are false positives, and there happen to be two overlapping in a frame, it is less likely that there will continue to be multiple overlapping false positives in 5 continuous frames, so this should serve as a better filter.
+-As multiple frame detections will be combined, this will/should also have the effect of smoothing the shape and position of the car bounding boxes.
+-As I was in the process of implementing this, I kept getting error messages when trying to process the video. Work on this continues.
 
 Other
 - Is normalization working correctly? Chart of normalized features looks like there could be an issue. 
