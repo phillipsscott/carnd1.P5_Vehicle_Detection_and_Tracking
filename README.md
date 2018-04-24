@@ -30,7 +30,7 @@ The goals / steps of this project are the following:
 [im08]: ./examples/pipeline_images.png 
 [im09]: ./examples/heatmap.png 
 [im10]: ./examples/labels.png 
-[im11]: ./examples/final_out.png 
+[im11]: ./examples/final_output.png 
 [im12]: ./examples/youtube_img.png
 
 [video1]: ./project_video.mp4
@@ -161,7 +161,7 @@ Here's an example result showing the heatmap from each of the sample images, the
 ![im10](examples/labels.png)
 
 ### Here the resulting bounding boxes are drawn onto the last frame:
-![im11](examples/final_out.png) 
+![im11](examples/final_output.png) 
 
 
 
