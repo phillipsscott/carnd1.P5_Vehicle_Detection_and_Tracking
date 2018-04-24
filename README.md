@@ -127,17 +127,17 @@ Rather than an overlap value, cells_per_step defines overlap. In this case, it i
 
 Regarding setting bounding regions and window scaling, I set a flag  in `find_cars` which would output all sliding windows given bounding and scaling parameters. I drew these windows on the input image to test out various parameters for bounding regions and window scaling factors. Given the amount of overlap of the search windows, it is difficult to see the actual size of window. Because of this, I also created an image with a subset of the windows (every 25th image). You can see an example of the sliding search windows and search subset below.
 
-[im05]: (examples/window_search_small.png)
+![im05](examples/window_search_small.png)
 
-[im06]: (examples/window_search_mid.png)
+![im06](examples/window_search_mid.png)
 
-[im07]: (examples/window_search_large.png) 
+![im07](examples/window_search_large.png) 
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
 The final parameter set for feature extraction consisted of spatial features, all-channel histogram features and all-channel hog features in the LUV colorspace. Orientation, pix/cell and cell/block were 9/8/2 respectively. I decided to use 6 sets of search space parameters, ranging from close to distant. The heatmap and label layers helped a lot to reduce false positives, and eliminate overlapping boxes by converting the group into one box. Below, you can see how the pipeline worked for the 6 sample images.
 
-[im08]: (examples/pipeline_images.png)
+![im08](examples/pipeline_images.png)
 ---
 
 ### Video Implementation
@@ -157,13 +157,13 @@ Here's an example result showing the heatmap from each of the sample images, the
 
 ### Here are frames and their corresponding heatmaps:
 
-[im09]: (examples/heatmap.png) 
+![im09](examples/heatmap.png) 
 
 ### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from frames:
-[im10]: (examples/labels.png)
+![im10](examples/labels.png)
 
 ### Here the resulting bounding boxes are drawn onto the last frame:
-[im11]: (examples/final_out.png) 
+![im11](examples/final_out.png) 
 
 
 
