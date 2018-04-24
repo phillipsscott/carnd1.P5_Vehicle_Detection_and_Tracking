@@ -60,11 +60,11 @@ Color histogram was created first, with the `convert_color` and `color_hist` fun
 
 The function to extract spatial features (`bin_spatial`) was defined in code cell 10. Below, you can see the plotted output of bin_spatial
 
-[im03]: (examples/bin_spatial.PNG )
+![im03](examples/bin_spatial.PNG "bin_spatial")
 
 Finally, the HOG feature extractor was defined in cell 13 as get_hog_features(). The function returns the hog feature vector, in addition to optionally returning the hog_image as well. Below, you can see an example using the `RGB` color space and HOG parameters of `orientations=9`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`
 
-[im04]: (examples/hog_features.PNG)
+![im04](examples/hog_features.PNG)
 
 These components were aggregated into `extract_features` and `single_image_features` in cells 16/17 respectively. This wrapper function will allow us to easily toggle the parameters of each component as we train the SVC in the next section.
 
