@@ -56,15 +56,15 @@ The plan for creating a feature extractor was first to implement each component 
 
 Color histogram was created first, with the `convert_color` and `color_hist` functions implemented in code cell 6. Below is an example of what the color histogram looks like across each color channel for the car and not-car classes.
 
-![alt text][image2] #color_hist
+![im02](examples/color_hist.png "color_hist")
 
 The function to extract spatial features (`bin_spatial`) was defined in code cell 10. Below, you can see the plotted output of bin_spatial
 
-![alt text][image3] #bin_spatial
+[im03]: (examples/bin_spatial.png)
 
 Finally, the HOG feature extractor was defined in cell 13 as get_hog_features(). The function returns the hog feature vector, in addition to optionally returning the hog_image as well. Below, you can see an example using the `RGB` color space and HOG parameters of `orientations=9`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`
 
-![alt text][image4] #hog_features
+[im04]: (examples/hog_features.png)
 
 These components were aggregated into `extract_features` and `single_image_features` in cells 16/17 respectively. This wrapper function will allow us to easily toggle the parameters of each component as we train the SVC in the next section.
 
@@ -127,17 +127,17 @@ Rather than an overlap value, cells_per_step defines overlap. In this case, it i
 
 Regarding setting bounding regions and window scaling, I set a flag  in `find_cars` which would output all sliding windows given bounding and scaling parameters. I drew these windows on the input image to test out various parameters for bounding regions and window scaling factors. Given the amount of overlap of the search windows, it is difficult to see the actual size of window. Because of this, I also created an image with a subset of the windows (every 25th image). You can see an example of the sliding search windows and search subset below.
 
-![alt text][image5] # window_search_small
+[im05]: (examples/window_search_small.png)
 
-![alt text][image6] # window_search_mid
+[im06]: (examples/window_search_mid.png)
 
-![alt text][image7] # window_search_large
+[im07]: (examples/window_search_large.png) 
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
-The final parameter set for feature extraction consisted of XXX, YYY, ZZZ. I decided to use 6 sets of search space parameters, ranging from close to distant. The heatmap and label layers helped a lot to reduce false positives, and eliminate overlapping boxes by converting the group into one box. Below, you can see how the pipeline worked for the 6 sample images.
+The final parameter set for feature extraction consisted of spatial features, all-channel histogram features and all-channel hog features in the LUV colorspace. Orientation, pix/cell and cell/block were 9/8/2 respectively. I decided to use 6 sets of search space parameters, ranging from close to distant. The heatmap and label layers helped a lot to reduce false positives, and eliminate overlapping boxes by converting the group into one box. Below, you can see how the pipeline worked for the 6 sample images.
 
-![alt text][image8] # pipeline images
+[im08]: (examples/pipeline_images.png)
 ---
 
 ### Video Implementation
@@ -146,7 +146,7 @@ The final parameter set for feature extraction consisted of XXX, YYY, ZZZ. I dec
 
 [![Watch the video](examples/youtube_img.png "YouTube Video")](https://youtu.be/Kf1KX540M6M)
 
-Here's a [link to my video result](./output_videos/project_video_processed.mp4), or click the image above!
+Here's a [link to my video result](./output_videos/project_video.mp4), or click the image above!
 
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
@@ -155,15 +155,15 @@ I recorded the positions of positive detections in each frame of the video.  Fro
 
 Here's an example result showing the heatmap from each of the sample images, the result of `scipy.ndimage.measurements.label()` and the bounding boxes then overlaid on the original images:
 
-### Here are six frames and their corresponding heatmaps:
+### Here are frames and their corresponding heatmaps:
 
-![alt text][image9] #heatmaps
+[im09]: (examples/heatmap.png) 
 
-### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
-![alt text][image10] #labels
+### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from frames:
+[im10]: (examples/labels.png)
 
-### Here the resulting bounding boxes are drawn onto the last frame in the series:
-![alt text][image11] #final_output
+### Here the resulting bounding boxes are drawn onto the last frame:
+[im11]: (examples/final_out.png) 
 
 
 
