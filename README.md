@@ -20,14 +20,14 @@ The goals / steps of this project are the following:
 
 **_Project To Do List_**
 
-- [ ] Load & explore data
-- [ ] Implement functions for feature extraction & visualize each
-    - [ ] Spatial Features
-    - [ ] Color Histogram Features
-    - [ ] HOG Features
-- [ ] Implement aggregate feature extraction function
+- [x] Load & explore data
+- [x] Implement functions for feature extraction & visualize each
+    - [x] Spatial Features
+    - [x] Color Histogram Features
+    - [x] HOG Features
+- [x] Implement aggregate feature extraction function
 - [ ] Iterate over feature extraction parameters to find best configuration
-    - [ ] Randomize data & select subset for parameter selection
+    - [x] Randomize data & select subset for parameter selection
     - [ ] Loop through parameters, optimizing for accuracy and time
         - [ ] Spatial Features
             - [ ] Color Space
@@ -41,7 +41,7 @@ The goals / steps of this project are the following:
             - [ ] Pix per cell
             - [ ] Cells per block
 - [ ] Train SVC with optimized feature extraction parameters
-    - [ ] Create label vectors
+    - [x] Create label vectors
     - [ ] Randomize data & split into train/test sets
     - [ ] Normalize data with sklearn.StandardScaler
         - Note: Fit to train data only, apply transform to train/test
