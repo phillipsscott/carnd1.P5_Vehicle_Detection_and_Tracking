@@ -21,18 +21,18 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/car_not_car.png # done
-[image2]: ./examples/color_hist.png  # done
-[image3]: ./examples/bin_spatial.png # done
-[image4]: ./examples/hog_features.png # done
-[image5]: ./examples/window_search_small.png # done
-[image6]: ./examples/window_search_mid.png # done
-[image7]: ./examples/window_search_large.png # done
-[image8]: ./examples/pipeline_images.png # done
-[image9]: ./examples/heatmap.png # done
-[image10]: ./examples/labels.png # done
-[image11]: ./examples/final_out.png # done
-[image12]: ./examples/youtube_img.png # get from youtube cover img
+[im01]: ./examples/car_not_car.png
+[im02]: ./examples/color_hist.png
+[im03]: ./examples/bin_spatial.png
+[im04]: ./examples/hog_features.png
+[im05]: ./examples/window_search_small.png
+[im06]: ./examples/window_search_mid.png
+[im07]: ./examples/window_search_large.png 
+[im08]: ./examples/pipeline_images.png 
+[im09]: ./examples/heatmap.png 
+[im10]: ./examples/labels.png 
+[im11]: ./examples/final_out.png 
+[im12]: ./examples/youtube_img.png # get from youtube cover img
 [final]: ./examples/final.gif #convert final video & save
 
 [video1]: ./project_video.mp4
@@ -50,7 +50,7 @@ The process of extracting HOG features from training images fell into the broade
 
 First, I took a look at a sample image of each class and look at some general datapoints. Given that each class was roughly the same size, I decided not to do any additional data augmentation to match class sizes. Below, you can see a sample of each class.
 
-![alt text][image1] #car_not_car
+![im01](examples/car_not_car.png "car_not_car") 
 
 The plan for creating a feature extractor was first to implement each component (color histogram, spatial features, and hog features), take a look at their output, then aggregate them into one function. This aggregate 'feature_extraction' function would allow me to include/exclude each component, and tweak their parameters when I moved on to training the SVC.
 
